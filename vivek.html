@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azad</title>
+    <style>
+        body {
+            background-color: lightblue;
+            display: block;
+        }
+
+        #dot {
+            width: 10px;
+            height: 10px;
+            padding: 10px;
+            margin: 10px;
+            margin: 20px 20px;
+            grid-gap: 20px;
+            background-color: red;
+        }
+
+        #result {
+            display: grid;
+            grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+            border: 10px;
+            padding: 30px;
+            margin: 30px;
+            background-color: blanchedalmond;
+            border-color: black;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="inp">
+        <input id="num" type="number">
+        <input  type="button" value="submit" onclick="myFunction()">
+    </div>
+    <div id="result">
+    </div>
+    <script>
+        var input = document.getElementById("num");
+        var res = document.getElementById("result");
+        function myFunction() {
+            let num = Number(input.value);
+            res.innerHTML = "";
+
+            for (i = 0; i < num; i++) {
+                const node = document.createElement("div");
+                node.id = "dot";
+                res.appendChild(node);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

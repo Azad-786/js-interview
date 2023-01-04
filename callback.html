@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>callback</title>
+</head>
+<body>
+      <script>
+          // example A
+     //     const funA = () =>{
+     //      setTimeout(()=>{
+     //           console.log("this is funA");
+     //           funB();
+     //      },3000);
+     //     } 
+
+     //     const funB = () =>{
+     //      console.log("this is funB");
+     //     }
+
+     //     funA();
+
+     //example2
+
+     const personOne = (friend,callfriend) =>{
+          console.log(`hey friend ${friend} how are you`);
+          callfriend();
+     }
+
+     const personTwo = () =>{
+       console.log("kya hal hai kaise ho")
+     }
+
+     personOne("azad",personTwo)
+         
+      </script>
+</body>
+</html>

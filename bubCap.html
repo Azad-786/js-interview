@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          div{
+               min-width: 100px;
+               min-height: 150px;
+               border: 2px solid grey;
+               padding: 30px;
+          }
+     </style>
+</head>
+<body>
+     <div id="grandparent">
+          <div id="parent">
+               <div id="child"></div>
+          </div>
+     </div>
+     <script>
+          // document.querySelector("#one").addEventListener("click",(e)=>{
+          //      console.log("grand parent");
+          // })
+          // document.querySelector("#two").addEventListener("click",(e)=>{
+          //      console.log(" parent");
+          // })
+          // document.querySelector("#three").addEventListener("click",(e)=>{
+          //      console.log("child ");
+          // })
+
+          
+document.querySelector('#grandparent').
+addEventListener('click', ()=>{
+    console.log("Grand Parent Clicked!!");
+},true)
+
+document.querySelector('#parent').addEventListener('click',()=>{
+    console.log("Parent Clicked!!!");
+},true)
+
+document.querySelector('#child').addEventListener('click', ()=>{
+    console.log("Child Clicked!!!");
+},true)
+     </script>
+</body>
+</html>

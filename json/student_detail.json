@@ -1,0 +1,20 @@
+[
+     {
+          "name":"azad",
+          "age":25,
+          "city":"Motihari"
+     },{
+          "name":"Shiwani",
+          "age":28,
+          "city":"Sugauli"
+     },{
+          "name":"Dhoona",
+          "age":23,
+          "city":"Amit Cinema"
+     }
+     ,{
+          "name":"Naushad",
+          "age":24,
+          "city":"Sugauli Gown"
+     }
+]

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>to do list</title>
+</head>
+<body>
+     <div class="first">
+          <form id="form">
+               write your data 
+               <br><br>
+               <input type="text" id="input">
+               <input type="text" id="input" >
+               <br><br>
+               <div id="msg"></div>
+               <div id="msg1"></div>
+               <button type="submit"> add</button>
+          </form>
+     </div>
+     <div class="second">
+          <h1>task added here</h1>
+          <div id="posts"></div>
+     </div>
+     <script>
+          let form=document.getElementById("form");
+          let input=document.getElementById("input");
+          let msg=document.getElementById("msg");
+          let poste = document.getElementById("posts")
+
+          form.addEventListener("submit",(e)=>{
+               e.preventDefault();
+               formValidation();
+          })
+
+          function  formValidation(){
+               if(input.value==""){
+                    alert("msg cannot blank");
+               }
+               
+               else{
+                    
+                    acceptData();
+               }
+              
+          }
+
+          let data = {};
+          let acceptData = ()=>{
+               data["text"]= input.value;
+               createPost();
+          }
+
+          let createPost = ()=>{
+               posts.innerHTML+=
+               `<div>
+                    <h2>${data.text}</h2>
+                    <span class="options" >
+                         <button onclick="editPost(this)">Edit</button>
+                         <button onclick="deletePost(this)">delete</button>
+                         </span>
+                    </div>`
+                    input.value="";
+          }
+
+          let deletePost=(e)=>{
+               e.parentElement.parentElement.remove();
+          }
+
+          let editPost=(e)=>{
+               input.value = e.parentElement.previousElementSibling.innerHTML;
+               e.parentElement.parentElement.remove();
+          }
+     </script>
+</body>
+</html>

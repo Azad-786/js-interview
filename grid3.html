@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          *{
+               margin: 0;
+               padding: 0;box-sizing: border-box;
+          }
+
+          main{
+               width: 75%;
+               height: 600px;
+               margin: 50px auto;
+               border: 1px solid grey;
+               display: grid;
+               grid-template-columns: repeat(3 ,1fr);
+          }
+          .div1{
+               background-color: aqua;
+               grid-column: 1/-1;
+               text-align: center;
+               border: 1px solid grey;
+               transition: 1s ;
+          }
+          .div2{
+               background-color: rgb(4, 32, 32);
+               text-align: center;
+               color: rgb(4, 4, 4);
+               border: 1px solid grey;
+               transition: 1s ;
+          }
+          .div3{
+               background-color: rgb(81, 222, 10);
+               text-align: center;
+               border: 1px solid grey;
+               transition: 1s ;
+          }
+          .div4{
+               background-color: rgb(194, 238, 34);
+               text-align: center;
+               border: 1px solid grey;
+               transition: 1s ;
+          }
+
+          .div1:hover{
+               transform: scale(0.9);
+               background-color: brown;
+          }
+          .div2:hover{
+               transform: scale(0.9);
+               background-color: rgb(216, 208, 208);
+          }
+          .div3:hover{
+               transform: scale(0.9);
+               background-color: rgb(249, 249, 5);
+          }
+          .div4:hover{
+               transform: scale(0.9);
+               background-color: rgb(164, 112, 164);
+          }
+     </style>
+
+</head>
+<body>
+     <main>
+          <div class="div1">one</div>
+          <div class="div2">two</div>
+          <div class="div3">three</div>
+          <div class="div4">four</div>
+     </body>
+     </main>
+    
+</html>

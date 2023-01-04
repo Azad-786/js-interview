@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          .style{
+               height: 150px;
+               min-width: 100px;
+               border: 1px solid gray;
+               text-align: center;
+               background-color: aqua;
+          }
+     </style>
+</head>
+<body>
+     
+     <h1>add todo</h1>
+     <form >
+             <input  type="text" placeholder="Title"  id="todo-title">
+             <input  type="text" placeholder="Description" id="todo-description">
+            <button id="add-todo"> Add Todo</button>
+         
+     </form>
+         <div id="todo-table">
+         </div>
+       
+
+
+<script >
+
+let addTodo = document.getElementById('add-todo');
+let todoTitle = document.getElementById('todo-title');
+let todoDescription = document.getElementById('todo-description');
+let table = document.getElementById('todo-table');
+
+let todoList = new Map();
+
+addTodo.addEventListener('click', function (e) {
+e.preventDefault();
+let todo = {
+title: todoTitle.value,
+description: todoDescription.value,
+}
+if (todo.title) {
+let id = todoList.size + 1;
+todo.id = id;
+todoList.set(id, todo)
+todoTitle.value = ''
+todoDescription.value = ''
+updateTable();
+
+} 
+});
+
+let updateTable = () => {
+let total = '';
+let todos = Array.from(todoList.values());
+todos.forEach((todo) => {
+total += 
+
+`<div class="style">
+     <h1>title:-${todo.title}</h1>
+     <h4> description:-${todo.description}</h4> 
+     </div>`
+});
+
+table.innerHTML = total;
+};
+</script>
+</body>
+</html>

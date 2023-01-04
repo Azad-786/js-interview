@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>TodoList in javascript without ES6</title>
+     <style>
+          .container{
+               height: 100vh;
+               width: 100%;
+               display: flex;
+               flex-direction: column;
+               margin: 0 auto;
+               align-items: center;
+               justify-content: center;
+               background-color: gray;
+          }
+     </style>
+</head>
+<body>
+     <div class="container">
+     <h2>form</h2>
+     <form >
+          <input type="text" id="name">
+          <input type="button" value="submit" onclick="manageData()">
+     </form>
+     <div id="msg"></div>
+     <h2>list</h2>
+     <table border="1">
+          <thead>
+               <tr>
+                    <td>S.no</td>
+                    <td>Name</td>
+                    <td>Action</td>
+               </tr>
+               <tbody id="root"></tbody>
+          </thead>
+     </table>
+</div>
+     <script>
+          let id=""
+          selectData();
+          // localStorage.clear();
+          function manageData(){
+               document.getElementById("msg").innerHTML="";
+               let name = document.getElementById("name").value;
+               if(name==""){
+                    document.getElementById("msg").innerHTML="please enter the value"
+               }else{
+                    if(id==""){
+                       let arr = getCrudData()
+                         if(arr==null){
+                             let data = [name];
+                             setCrudData(arr)
+                         }else{
+                              arr.push(name);
+                              setCrudData(arr)
+                         }
+                         
+                    document.getElementById("msg").innerHTML="data added";
+                    }else{
+                         let arr=getCrudData();
+                         arr[id]=name;
+                         setCrudData(arr); 
+                         document.getElementById("msg").innerHTML="data updated";
+                    }
+                    selectData();  
+                    
+               }
+               document.getElementById("name").value="";
+             
+          }
+          function selectData(){
+              let arr= getCrudData()
+               if(arr!=null){
+                    let html="";
+                    let sno=1;
+                    for(let k in arr){
+                         html= html+
+                         `<tr><td>${sno}</td><td>${arr[k]}</td>
+                         <td><a href="javascript:void(0)" 
+                              onclick="editData(${k})">Edit</a>&nbsp;
+                              <a href="javascript:void(0)" 
+                              onclick="deleteData(${k})">delete</a></td></tr>`
+                         sno++;
+                    }
+                    document.getElementById("root").innerHTML=html;
+               }
+          }
+          function editData(rid){ 
+               id=rid;
+               let arr= getCrudData();
+               document.getElementById("name").value=arr[rid]
+          }
+          function deleteData(rid){
+              let arr= getCrudData();
+               arr.splice(rid,1);
+               setCrudData(arr)
+               selectData()
+          }
+          function getCrudData(){
+               let arr = JSON.parse(localStorage.getItem("crud"));
+               return arr;
+          }
+          function setCrudData(arr){
+               localStorage.setItem('crud',JSON.stringify(arr));
+          }
+
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <ul><li>First Element</li>
+          <li>Second Element</li>
+          <li>Third Element</li>
+     </ul>
+
+     <table border="1">
+          <tr>
+               <td>one</td>
+               <td>two</td>
+               <td>three</td>
+               <td>four</td>
+          </tr>
+          <tr>
+               <td>one</td>
+               <td>two</td>
+               <td>three</td>
+               <td>four</td>
+          </tr>
+          <tr>
+               <td>one</td>
+               <td>two</td>
+               <td>three</td>
+               <td>four</td>
+          </tr>
+          <tr>
+               <td>one</td>
+               <td>two</td>
+               <td>three</td>
+               <td>four</td>
+          </tr>
+     </table>
+     <script>
+          // dom for list
+
+          // console.log(document.documentElement)
+          // console.log(document.body);
+          // console.log(document.head);
+          // console.log(document.body.children);
+          // console.log(document.body.firstElementChild);
+          // console.log(document.body.lastElementChild);
+
+          // for(node of document.body.children){
+          //      console.log(document.body.children);
+          // }
+
+          // const childrensOfBody = Array.from(document.body.children);
+          // console.log(childrensOfBody);
+
+          // siblings
+          // const ulTag = document.body.children[0];
+          // console.log(ulTag.nextElementSibling);
+
+          // const ulTag = document.body.children[0];
+          // const firstLi = ulTag.children[0];
+          // const secondLi = ulTag.children[1];
+          // console.log(secondLi.previousElementSibling);
+          // console.log(secondLi.previousElementSibling.textContent);
+
+          // dom for table
+
+          const tableTag = document.body.children[1];
+          // console.log(tableTag.tBodies[0].rows[0].cells[0].textContent );
+
+          // console.log(tableTag.tBodies[0].rows[0].cells[0].style= "background-color:red;")
+
+          console.log(tableTag.tBodies[0].rows[0].style = "background-color:blue;")
+          console.log(tableTag.tBodies[0].rows[1].style = "background-color:red;")
+          console.log(tableTag.tBodies[0].rows[2].style = "background-color:pink;")
+          console.log(tableTag.tBodies[0].rows[3].style = "background-color:yellow;")
+     </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          body{
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 100vh;
+               background: grey;
+          }
+
+          form{
+               background-color: aliceblue;
+               padding: 30px;
+               text-align: center;
+               border-radius: 15px;
+               width: 350px;
+          }
+          form input{
+               display: block;
+               margin: 18px auto;
+               padding: 8px;
+               text-align: center;
+               border: 2px solid#4090db;
+               width: 180px;
+               font-size: 20px;border-radius: 10px;
+          }
+            .aa{
+               cursor: pointer;
+               font-size: 19px;
+               background:#5092cf ;
+          }
+          p{
+               color: red;
+               font-size: 22px;
+          }
+     </style>
+</head>
+<body>
+     <form action="" method="GET" >
+          <h1 style="text-align: center;">Log In</h1>
+
+          <input type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+         /> 
+
+          <input type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          /> 
+
+          <p id="errorMessage" hidden></p>
+          <input type="submit" class="aa"/>
+
+     </form>
+     <script type="text/javascript">
+        const username=document.getElementById("username") ;
+        const password=document.getElementById("password");
+        const form=document.querySelector("form"); 
+        const erroressage=document.getElementById("errorMessage");
+
+        form.addEventListener("submit",(e)=>{
+          const error = [];
+          if(username.value.trim()==="" ){
+               error.push("username required")
+          }
+          if(username.value.length<6){
+               error.push("must be great than 6")
+
+          }
+          if(username.value.length>10){
+               error.push("must be less than 10")
+          }
+
+          
+          if(password.value.trim()===""){
+               error.push("password required");
+          }
+          if(password.value.length>7){
+               error.push("password must be lesse than 8 char")
+          }
+
+          if(error.length > 0){
+               e.preventDefault();
+               errorMessage.toggleAttribute('hidden');
+               errorMessage.innerHTML = error.join(',');
+          }
+        })
+     </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body id="body">
+     <p id="para">is this right place</p>
+     <select name="color" id="color" onchange="changeColor(this)">
+          <option value="white">select</option>
+          <option value="green">yes</option>
+          <option value="red">no</option>
+     </select>
+
+     <script>
+function changeColor(event){
+     var color=event.value;
+     document.getElementsByTagName("BODY")[0].style.backgroundColor =color;
+     // document.getElementsByTagName("P")[0].style.color =color;
+
+}
+     </script>
+</body>
+</html>
